@@ -1,0 +1,394 @@
+/* reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    /* Colors palette */
+    --sdl--primero-color: #130e0e;
+    --sdl--segundo-color: #6cc091;
+    --sdl--tercero-color: #fff;
+    --sdl--cuarto-color: #090101;
+    --sdl--quinto-color: #320909;
+    --sdl--sexto-color: solid #1d623b;
+    --sdl--septimo-color: #4d4d5c;
+    --sdl--primero-background: #6cc09070;
+    --sdl--segundo-background: #6cc091;
+    --sdl--tercero-background: rgba(77, 77,92, 0.6);
+    /*font-family*/
+    --sdl--font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+/* header */
+
+header{
+    height: 100px;
+    background: var(--sdl--septimo-color);
+    padding: 0 50px;
+    color: var(--sdl--primero-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo{
+    text-transform: uppercase;
+    color: var(--sdl--segundo-color);
+    font-weight: 200;
+}
+
+.menu a{
+    color: var(--sdl--tercero-color);
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0 10px;
+     transition: 0.4s; 
+}
+
+.mostrar-menu,
+.esconder-menu{
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+    transition: 0.4s;
+}
+.mostrar-menu{
+    order:1;
+}
+.menu a:hover,
+.mostrar-menu:hover,
+.esconder-menu:hover{
+    color: var(--sdl--segundo-color);
+}
+#check{
+    display: none;
+}
+
+.esconder-menú {
+ display: none;
+}
+
+
+
+@media (max-width: 768px) {
+    .mostrar-menu,
+    .esconder-menu {
+        display: block;
+    }
+
+    .menu{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: var(--sdl--septimo-color);
+        right: -100%;
+        top: 0;
+        text-align: center;
+        padding: 100px 0px;
+        z-index: 100;
+        transition: 0.8s;
+    }
+    .menu a{
+        display: block;
+        padding: 20px;
+    }
+    .esconder-menu{
+        position: absolute;
+        top: 40px;
+        right: 40px;
+    }
+    #check:checked ~ .menu{
+        right: 0;
+    }
+
+    .esconder-menú {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+       }
+}
+
+
+
+/*banner */
+#banner{
+    padding: 0 30px;
+    background-image: url(https://images.pexels.com/photos/5320332/pexels-photo-5320332.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+    height: 300vh;
+    background-size: cover;
+    background-position: center;
+}
+.contenido-banner{
+    position: absolute;
+    color: var(--sdl--cuarto-color);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content:left
+}
+.contenido-banner h3{
+    font-size: 1em;
+    font-weight: 400;
+    padding: 10px 0px;
+}
+.contenido-banner h3 span{
+    font-weight: 600;
+}
+.boton-empezar{
+    text-decoration: none;
+    color: var(--sdl--quinto-color);
+    border: 1px solid var(--sdl--segundo-color);
+    padding: 10px 20px;
+    align-self: baseline;
+    transition: all 0.4s;
+}
+.boton-empezar:hover{
+    background: var(--sdl--tercero-background);
+}
+@media screen and (min-width:1000px) { 
+.contenido-banner > h3 {
+font-size: 2em;
+}
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+}
+/* PERSONAS */
+#personas{
+    display: flex;
+    flex-direction: column;
+}
+#personas h2 {
+    text-align: center;
+    margin: 10px 20px;
+}
+
+.card {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax)(200, 1fr);
+    padding: 50px 50px;
+    width: 100%;
+    justify-content: center;
+    text-align: center; 
+}
+
+.card div{
+    padding: 30px 30px;
+}
+
+.card img {
+    border-radius: 100%;
+    width: 80%;
+    height: 80%;
+}
+
+.cartas div p{
+    color: var(--sdl--septimo-color);
+    font-size: 20px;
+    margin: 15px 0px; 
+}
+
+.enologos div h4{
+    color: var(--sdl--septimo-color);
+    font-size: 20px;
+    margin: 15px 0px;
+
+}
+
+.enologos {
+    height: 1fr;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax)(200, 1fr);
+    padding: 50px 50px;
+    width: 100%;
+    justify-content: center;
+    text-align: center; 
+}
+
+.enologos img {
+    border-radius: 100%;
+    width: 50%;
+    height: 50%;
+}
+
+.enologos div p{
+    color: var(--sdl--septimo-color);
+    font-size: 15px;
+    margin: 15px 0px; 
+}
+
+.boton-saber-mas{
+    display: inline-block; 
+   text-decoration: none;
+   color: var(--sdl--segundo-color);
+   padding: 20px 50px;
+   border: 3px solid var(--sdl--segundo-color);
+   border-radius: 50px;
+   margin-bottom: 20px;
+   transition: all 0.4s;
+}
+
+.enologos button {
+    border: none;
+}
+
+.boton-saber-mas:hover{
+    background: var(--sdl--segundo-background);
+    color: var(--sdl--tercero-color);
+
+}
+/*ICONOS*/
+#iconos{
+    height:80px;
+    padding: 0px 20px;
+    background: rgba(77, 77,92, 0.6);
+}
+
+.contenido-iconos{
+    padding: 50ps 50px 0px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.contenido-iconos img {
+    color: var(--sdl--segundo-color);
+    display: flex;
+    height: 50px;
+    width: 50px;
+}
+
+.boton-iconos{
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+/* FORMULARIOS*/
+#contacto{
+ background: var(--sdl--segundo-color);
+    padding: 50px 0px;
+    color: var(--sdl--tercero-color);
+
+}
+#contacto h4{
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+#contacto form{
+    max-width: 80%;
+    margin: 0 auto;
+}
+.datos-form{
+    display: flex;
+}
+.datos-form div{
+    padding: 5px;
+    flex: 1;
+}
+form label{
+    display: block;
+    margin-bottom: 10px;
+
+}
+form input,
+form textarea{
+    background: var(--sdl--segundo-background);
+    border-radius: 10px;
+    border: 2px solid var(--sdl--segundo-color);
+    padding: 10px 5px;
+    outline: 0;
+    color: var(--sdl--tercero-color);
+    width: 100%;
+
+}
+form input:focus{
+    border-color: var(--sdl--segundo-color);
+    box-shadow: 0 0 0 1px var(--sdl--segundo-color);    
+}
+form input::placeholder,
+form textarea::placeholder{
+    color: var(--sdl--tercero-color);
+}
+.mensaje{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+.boton-formulario .boton-saber-mas{
+    display: block;
+    border: 1px solid var(--sdl--tercero-color);
+    color: var(--sdl--tercero-color);
+    text-align: center;
+    transition: 0.4s;
+
+}
+.boton-formulario .boton-saber-mas:hover{
+    background: var(--sdl--segundo-color);
+}
+/*FOOTER*/
+footer{
+    background: var(--sdl--septimo-color);
+    color: var(--sdl--septimo-color);
+    text-align: center;
+    padding: 10px 0px;
+
+}
+
+
+.menu_mobile {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: var(--sdl--septimo-color);
+    right: -100%;
+    top: 0;
+    text-align: center;
+    padding: 100px 0px;
+    z-index: 100;
+    transition: 0.8s;
+
+}
+
+.menu_mobile a{
+    display: block;
+    padding: 20px;
+
+}
+
+.esconder-menu{
+    position: absolute;
+    top: 40px;
+    right: 40px;
+
+
+}
+#check:checked ~ .menu_mobile{
+    right: 0;
+}
+
+#personas{
+    flex-direction: column;
+}
+.redes-container{
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/*FORMULARIO*/
+.datos-form{
+    flex-direction: column;
+}
